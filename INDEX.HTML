@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="main-content">
+        <h1>Cardápio</h1>
+        <div class="cardapio">
+            <div class="prato">
+                <img src="ratatouille.jpg" alt="Macarrão e tomate seco com rúcula">
+                <p>Ratatouille - Uma clássica receita francesa provençal de legumes cozidos do século XVIII.</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div class="prato">
+                <img src="file mignon.jpg" alt="Risoto de cogumelos">
+                <p>Filé Mignon com Gorgonzola - Cremoso e saboroso, o molho de gorgonzola combina perfeitamente com vinhos tintos ou brancos. </p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div class="prato">
+                <img src="salmao.jpg" alt="Sushi Variado">
+                <p>Salmão Grelhado com Purê de Couve-Flor - Leve e saboroso, com salmões selecionados e temperos de qualidade.</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div class="prato">
+                <img src="camarao.jpg" alt="Salada de Quinoa">
+                <p>Camarão Coco Bambu - Combina o arroz cremoso do Camarão Internacional com os camarões empanados com catupiry. </p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div class="prato">
+                <img src="parmegiana.jpg" alt="Bife com Batatas">
+                <p> Frango à Parmegiana - Um clássico, suculenta parmegiana acompanha arroz branco e batatas rústicas.</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div class="prato">
+                <img src="petit gateu.jpg" alt="Tacos Mexicanos">
+                <p>Petit Gâteau - É uma sobremesa francesa de chocolate, acompanha uma bola de sorvete de creme.</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div class="prato">
+                <img src="red velvet.jpg" alt="Pizza Margherita">
+                <p>Cupcake Red Velvet - O bolo veludo vermelho, coberto com creme de baunilha.</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div class="prato">
+                <img src="banoffee.jpg" alt="Frutos do Mar">
+                <p>Banoffee - Uma suculenta torta de sobremesa britânica feita de banana.</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div class="prato">
+                <img src="panquecass.jpg" alt="Brownie de Chocolate">
+                <p>Panquecas com Mel e Morango- Uma sobremesa perfeita para os amantes de doce.</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+            <div class="prato">
+                <img src="macaron.jpg" alt="Pavê de Chocolate">
+                <p>Macaron - Uma deliciosa sobremesa redonda e crocante, que derrete na boca.</p>
+                <button onclick="lerDescricao(this)">Ouvir Descrição</button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Feito por Julia Santos</p>
+    </footer>
+
+    <script>
+        function lerDescricao(botao) {
+            window.speechSynthesis.cancel();
+            const descricaoImagem = botao.parentElement.querySelector('p').innerText;
+            lerTexto(descricaoImagem);
+        }
+        function lerTexto(texto) {
+            const mensagem = new SpeechSynthesisUtterance(texto);
+            window.speechSynthesis.speak(mensagem);
+        }
+    </script>
+</body>
+</html>
